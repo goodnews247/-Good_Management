@@ -24,6 +24,9 @@ export class User extends Base {
   role: Role;
   @OneToMany(()=> Todolist, (todo)=> todo.user)
   todo: Todolist
+
+  @Column()
+  image :string
 }
 
 
