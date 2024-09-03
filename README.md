@@ -72,3 +72,129 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 
 Nest is [MIT licensed](LICENSE).
 # -Good_Management
+
+
+<!-- goodnews here -->
+v# GroupName 
+ - Engine-Elite.
+
+# Motto: 
+ - By perseverance, the tortoise wins the race.
+
+ ## Table of Contents
+
+- [Overview](#Overview)
+- [SwaggerDocumentation](#SwaggerDocumentation)
+- [Architecture](#Architecture)
+- [ERD](#erd)
+- [ERD-LINK](#ERD LINK)
+- [Enums](#Enums)
+- [Endpoints](#Endpoints)
+- [Database-Schema](#Database-Schema)
+- [Installation](#installation)
+- [Usage](#usage)
+
+## Overview
+ - This README provides an overview of the backend implementation API design and Entity Relationship Diagram (ERD)for the HNG stage 3 Boilerplate Project.
+
+## Architecture
+ - [SwaggerDocumentation](https://app.swaggerhub.com/apis/NEHIRUGUE/Team_Engine-Elite_API_HNG/1.0.0)
+
+
+
+## ERD
+ - The Entity Relationship Diagram (ERD) represents the data model and relationships within the project. It provides a visual overview of how the entities (tables) are related to each other. The tables are User, Organisation, Notification, and Transaction.
+
+## ERD-LINK
+- https://drive.google.com/file/d/1BMf5yW7cJYyQsVfgD2TV76fKJzEqwYIi/view?usp=drive_link
+
+
+### Enums
+ - superAdmin & genericUser
+ *UserRoleEnum*
+- ADMIN
+- USER
+
+## Endpoints
+
+### GET /users
+- Returns a list of users.
+
+## Request:
+ * URL: /users
+ * Method: GET
+ * Parameters: None
+
+## Response:
+ * Status Code: 200
+ * Body:
+json
+[
+  {
+    "id": 1,
+    "firstName": "Leona",
+    "lastName": "Hill",
+    "email": "leona.hill@gmail.com",
+    "role": "superAdmin",
+  },
+  {
+    "id": 2,
+     "id": 1,
+    "firstName": "Rugue",
+    "lastName": "Hill",
+    "email": "rugue.hill@gmail.com",
+    "role": "genericUser",
+  },
+  {
+    "id": 3,
+    "firstName": "Andee",
+    "lastName": "Hill",
+    "email": "andee.hill@gmail.com",
+    "role": "genericUser",
+  },
+  {
+      "id": 4,
+    "firstName": "fredrick",
+    "lastName": "Hill",
+    "email": "fredrick.hill@gmail.com",
+    "role": "superAdmin",
+  },
+  {
+    "id": 5,
+    "firstName": "pearl",
+    "lastName": "Hill",
+    "email": "pearl.hill@gmail.com",
+    "role": "genericUser",
+}
+]
+
+### POST /register
+- Creates a new user.
+- Returns the newly created user.
+
+## Request:
+ * URL: /register
+ * Method: POST
+ * Parameters: 
+     - firstName: string(required)
+     - lastName: string(required)
+     - email: string(required & unique)
+     - password: string(required)
+     - role: string(genericUser by default)
+
+## Response:
+- Status Code: 201
+- Body:
+
+{
+    "id": 1,
+    "firstName": "fred",
+    "lastName": "Hill",
+    "email": "fred.hill@gmail.com",
+    "role": "genericUser",
+    
+}
+
+## Database-Schema
+ *Users Table*
+    |pk id| |firstName| |lastName| |email| |password| |role|
